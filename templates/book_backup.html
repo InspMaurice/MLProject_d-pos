@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}{{ book_name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ book_name }}</h1>
+    <div class="chapter-navigation">
+        <button onclick="changeChapter('{{ book_name }}', {{ chapter.id - 1 }})" {% if chapter.id == 1 %}disabled{% endif %}>Previous Chapter</button>
+        <span>Chapter {{ chapter.id }}</span>
+        <button onclick="changeChapter('{{ book_name }}', {{ chapter.id + 1 }})">Next Chapter</button>
+    </div>
+    <div class="chapter-content">
+        <div class="text-container" id="text-container">
+            {% for paragraph in chapter.paragraphs %}
+                <p id="paragraph-{{ paragraph.paragraph_id }}" onclick="handleParagraphClick('{{ paragraph.paragraph_id }}', '{{ paragraph.text }}')">
+                    {{ paragraph.text }}
+                </p>
+            {% endfor %}
+        </div>
+        <div class="audio-options">
+            <button onclick="playAudio()">Play Audio</button>
+            <button onclick="pauseAudio()">Pause Audio</button>
+            <button onclick="stopAudio()">Stop Audio</button>
+            <label for="voice-select">Voice:</label>
+            <select id="voice-select">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/book.js') }}"></script>
+{% endblock %}

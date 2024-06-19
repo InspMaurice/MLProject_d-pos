@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.book-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.book-item:hover {
+    transform: scale(1.05);
+}
+
+.book-item img {
+    max-width: 100px;
+    height: auto;
+}
+
+.chapter-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow-y: auto;
+    height: 400px;
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.chapter-content p {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.chapter-controls, .audio-controls {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+select {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.scrollable {
+    max-height: 400px; /* Hauteur maximale de la division */
+    overflow-y: auto; /* Activation de la scrollbar verticale en cas de dépassement */
+    padding: 10px; /* Marge intérieure pour l'espace autour du texte */
+    border: 1px solid #ccc; /* Bordure facultative pour délimiter visuellement la division */
+    margin-bottom: 5px;
+}
+
+.scrollable p {
+    margin-bottom: 10px; /* Espacement entre les paragraphes */
+}
+
+.book-cover-img {
+    max-width: 200px; /* Taille maximale souhaitée */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centrer l'image */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.books-container {
+    display: flex; /* Utilisation de flexbox */
+    flex-wrap: wrap; /* Permettre le retour à la ligne */
+    gap: 20px; /* Espacement entre les livres */
+}
+
+.book-item {
+    background-color: #f0f0f0; /* Fond clair */
+    padding: 10px;
+    border-radius: 8px;
+    width: 200px; /* Largeur fixe de chaque livre */
+    margin-bottom: 20px; /* Espacement en bas de chaque livre */
+}
+
+.book-item h3 {
+    font-size: 1.2em; /* Taille de police pour le titre */
+    margin-bottom: 5px; /* Espacement sous le titre */
+}
+
+.book-item p {
+    font-size: 0.9em; /* Taille de police pour la langue */
+    color: #666; /* Couleur du texte plus clair */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.scrollable {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#chapter-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#chapter-navigation button {
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#chapter-navigation button:hover {
+    background-color: #777;
+}
+
+#audio-controls,
+#options-menu {
+    margin-top: 20px;
+}
+
+#audio-controls button,
+#options-menu select {
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#audio-controls button:hover,
+#options-menu select:hover {
+    background-color: #777;
+}

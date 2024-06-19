@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}{{ book_name }}{% endblock %}
+
+{% block content %}
+<body data-language="{{ book_data['language'] }}">
+    <h1>{{ book_name }}</h1>
+    <div id="chapter-content" class="scrollable">
+        <h2>{{ chapter['title'] }}</h2>
+        {% for paragraph in chapter['paragraphs'] %}
+            <p class="paragraph" data-paragraph-id="{{ paragraph['paragraph_id'] }}">{{ paragraph['text'] }}</p>
+        {% endfor %}
+    </div>
+    <div id="chapter-navigation">
+        <button id="prev-chapter">Previous Chapter</button>
+        <button id="next-chapter">Next Chapter</button>
+    </div>
+    <div id="audio-controls">
+        <button id="play-audio">Play Audio</button>
+        <button id="pause-audio">Pause Audio</button>
+        <button id="stop-audio">Stop Audio</button>
+    </div>
+    <div id="options-menu">
+        <label for="voice-select">Select Voice:</label>
+        <select id="voice-select">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+
+    
+    <script src="{{ url_for('static', filename='js/book.js') }}"></script>
+</body>
+{% endblock %}

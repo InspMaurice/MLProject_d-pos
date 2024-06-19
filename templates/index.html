@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Library</h1>
+    <!-- <div class="books"> -->
+    <!-- {% for book in books %}
+        <div class="book" onclick="location.href='/{{ book.file_name }}'">
+            <img src="{{ url_for('static', filename='images/' ~ book.file_name ~ '.jpg') }}" alt="{{ book.book_name }}">
+            <h3>{{ book.book_name }}</h3>
+            <p>Language: {{ book.language }}</p>
+        </div>
+    {% endfor %} -->
+    <div class="books-container">
+        {% for book in books %}
+        <!-- <a href="/{{ book.file_name }}" class="book-link"> -->
+        <div class="book-item" data-file_name="{{ book.file_name }}" onclick="location.href='/{{ book.file_name }}';">
+            <img class="book-cover-img" src="{{ url_for('static', filename='images/' + book.file_name + '.jpg') }}" alt="{{ book.book_name }}">
+            <div class="book-details">
+                <h3>{{ book.book_name }}</h3>
+                <p>Langue: {{ book.language }}</p>
+            </div>
+        </div>
+        <!-- </a> -->
+        {% endfor %}
+    </div>
+    <!-- </div> -->
+{% endblock %}
