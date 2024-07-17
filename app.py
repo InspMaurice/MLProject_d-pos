@@ -23,7 +23,7 @@ def load_chapter(book_name, chapter_id):
             return chapter
     return None
 
-client = Client("https://myshell-ai-openvoicev2.hf.space/--replicas/yqzem/")
+client = Client("https://myshell-ai-openvoicev2.hf.space/--replicas/sh0ts/")
 
 def make_openvoice_request(text, style, reference_audio_url, agree):
     try:
